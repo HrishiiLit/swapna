@@ -1,255 +1,275 @@
-<![CDATA[# 🏥 Swapna — Smart Healthcare Platform
+<![CDATA[<div align="center">
 
-> A full-stack, AI-powered healthcare web application built to solve real-world medical challenges commonly seen in hackathon problem statements — from appointment booking and telemedicine to disease prediction and health analytics.
+# 🏥 Swapna
+
+### Smart Healthcare Platform
+
+![Status](https://img.shields.io/badge/Status-In%20Development-yellow?style=for-the-badge)
+![Team](https://img.shields.io/badge/Team-4%20Members-blue?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+
+**A full-stack, AI-powered healthcare web application designed to solve real-world medical challenges commonly seen in hackathon problem statements.**
 
 ---
 
-## 🚀 Project Overview
+</div>
 
-**Swapna** is a comprehensive healthcare platform that brings together patients, doctors, and administrators under one unified system. The goal is to build a production-grade medical web app that covers the most demanded features in health-tech hackathons, including:
+## � About The Project
 
-- 🩺 **Appointment Booking & Management** — Schedule, reschedule, and cancel appointments with doctors
-- 📹 **Telemedicine / Video Consultation** — Real-time video calls between patients and doctors
-- 🤖 **AI Disease Prediction** — ML models that predict diseases from symptoms, lab reports, or medical images
-- 📊 **Health Dashboard & Analytics** — Visualize patient health metrics, trends, and insights over time
-- 💊 **E-Prescription & Medicine Reminders** — Digital prescriptions with automated reminders
-- 🗂️ **Electronic Health Records (EHR)** — Secure storage and retrieval of patient medical history
-- 🔐 **Role-Based Authentication** — Separate portals for patients, doctors, and admins
-- 🏥 **Hospital / Clinic Finder** — Location-based search with maps integration
-- 🧪 **Lab Report Upload & Analysis** — OCR + AI-powered report parsing
-- 📱 **Responsive Design** — Mobile-first UI that works across all devices
+**Swapna** is a comprehensive healthcare platform that brings together **patients**, **doctors**, and **administrators** under one unified system. The goal is to build a production-grade medical web app covering the most in-demand features in health-tech hackathons.
+
+### Key Features
+
+| # | Feature | Description |
+|---|---------|-------------|
+| 1 | **Appointment Booking** | Schedule, reschedule, and cancel appointments with doctors |
+| 2 | **Telemedicine** | Real-time video consultations between patients and doctors |
+| 3 | **AI Disease Prediction** | ML models that predict diseases from symptoms, reports, or images |
+| 4 | **Health Dashboard** | Visualize patient health metrics, trends, and insights over time |
+| 5 | **E-Prescription** | Digital prescriptions with automated medicine reminders |
+| 6 | **Electronic Health Records** | Secure storage and retrieval of patient medical history |
+| 7 | **Role-Based Auth** | Separate portals for patients, doctors, and admins |
+| 8 | **Hospital Finder** | Location-based clinic/hospital search with maps |
+| 9 | **Lab Report Analysis** | OCR + AI-powered report parsing from uploaded documents |
+| 10 | **Responsive Design** | Mobile-first UI across all devices |
 
 ---
 
 ## 💡 Suggested Tech Stack
 
-> _Final stack to be confirmed — suggestions below:_
+> *Final stack to be confirmed by the team — open to suggestions!*
 
-| Layer              | Suggested Technologies                                      |
-| ------------------ | ----------------------------------------------------------- |
-| **Frontend**       | React.js / Next.js, Tailwind CSS, Framer Motion, Chart.js   |
-| **Backend**        | Node.js + Express / FastAPI (Python)                         |
-| **Database**       | PostgreSQL (relational), MongoDB (documents), Redis (cache)  |
-| **ML / AI Models** | Python, scikit-learn, TensorFlow / PyTorch, Flask API        |
-| **Auth**           | JWT, OAuth 2.0, bcrypt                                       |
-| **Video Calls**    | WebRTC / Twilio / Agora SDK                                  |
-| **DevOps**         | Docker, Docker Compose, GitHub Actions CI/CD, Nginx          |
-| **Cloud**          | AWS / GCP / Azure (hosting, storage, model serving)          |
-| **Other**          | Socket.io (real-time), Tesseract OCR, Leaflet.js (maps)     |
+| Layer | Technologies |
+|-------|-------------|
+| **Frontend** | React.js / Next.js, Tailwind CSS, Framer Motion, Chart.js |
+| **Backend** | Node.js + Express / FastAPI (Python) |
+| **Database** | PostgreSQL, MongoDB, Redis |
+| **ML / AI** | Python, scikit-learn, TensorFlow / PyTorch |
+| **Auth** | JWT, OAuth 2.0, bcrypt |
+| **Video Calls** | WebRTC / Twilio / Agora SDK |
+| **DevOps** | Docker, Docker Compose, GitHub Actions, Nginx |
+| **Cloud** | AWS / GCP / Azure |
+| **Other** | Socket.io, Tesseract OCR, Leaflet.js |
 
 ---
 
-## 👥 Team Structure & Responsibilities
+## 👥 Team Structure
 
-The project is divided into **4 interrelated domains**, each assigned to a team member. Every member's work feeds into the others — the frontend consumes the backend APIs, the backend reads/writes to the database, the ML models are served through the backend, and Docker ties everything together for deployment.
+The project is split across **4 interrelated domains**. Each member's work directly feeds into the others.
+
+---
+
+### � Member 1 — Frontend & UI/UX
+
+> *Owns everything the user sees and interacts with.*
+
+**Responsibilities:**
+
+- Build all pages — landing, dashboard, appointments, profile, admin panel
+- Create reusable UI component library (buttons, modals, forms, cards)
+- Implement global state management for auth, user data, and notifications
+- Connect frontend to backend via REST API calls
+- Build chat UI, video call interface, and live notification system
+- Design interactive health dashboards with charts and graphs
+- Ensure mobile-first, cross-browser compatible responsive layouts
+
+**Deliverables:**
+
+- [ ] Patient portal
+- [ ] Doctor portal
+- [ ] Admin panel
+- [ ] Appointment booking flow
+- [ ] Health analytics dashboard
+- [ ] Video consultation UI
+
+---
+
+### � Member 2 — Backend & API Development
+
+> *Owns the server, business logic, and API layer.*
+
+**Responsibilities:**
+
+- Design and build RESTful API endpoints for all features
+- Implement JWT-based authentication with role-based access control
+- Write core business logic — scheduling, prescriptions, notifications
+- Handle file uploads/downloads (lab reports, images, prescriptions)
+- Set up Socket.io for real-time chat and notification delivery
+- Create integration layer to serve ML model predictions via API
+- Enforce security — input validation, rate limiting, CORS, HTTPS
+
+**Deliverables:**
+
+- [ ] Complete REST API with Swagger / OpenAPI documentation
+- [ ] Auth system with patient / doctor / admin roles
+- [ ] ML model serving integration
+- [ ] Real-time notification system
+- [ ] File upload pipeline
+
+---
+
+### � Member 3 — Database & Data Management
+
+> *Owns schema design, data integrity, and query performance.*
+
+**Responsibilities:**
+
+- Design ER diagrams and normalized database schemas
+- Build ORM models (Sequelize / Prisma / SQLAlchemy) for all entities
+- Define relationships — foreign keys, joins, cascading operations
+- Write and manage version-controlled schema migrations
+- Create seed scripts with sample data for development and demos
+- Set up Redis for session caching and frequently accessed queries
+- Plan data encryption at rest and automated backup strategy
+
+**Deliverables:**
+
+- [ ] Complete ER diagram
+- [ ] ORM models for all entities (users, doctors, appointments, records)
+- [ ] Migration scripts
+- [ ] Seed data for demo
+- [ ] Query optimization and indexing strategy
+- [ ] Redis caching layer
+
+---
+
+### � Member 4 — ML/AI Models & DevOps
+
+> *Owns the intelligence layer and the deployment pipeline.*
+
+**Responsibilities:**
+
+**ML & AI:**
+- Train disease prediction models on symptom/disease datasets
+- Build CNN-based models for medical image analysis (X-ray, skin lesions)
+- Create OCR pipeline to parse uploaded lab reports
+- Serve trained models via Flask / FastAPI microservice
+
+**DevOps & Deployment:**
+- Write Dockerfiles for frontend, backend, database, and ML service
+- Orchestrate all services with `docker-compose.yml`
+- Set up GitHub Actions CI/CD — lint, test, build, deploy
+- Configure cloud deployment (AWS/GCP) with Nginx reverse proxy
+
+**Deliverables:**
+
+- [ ] Trained disease prediction model (≥ 85% accuracy)
+- [ ] Medical image classification model
+- [ ] Dockerized full-stack setup (`docker-compose up`)
+- [ ] CI/CD pipeline with automated testing
+- [ ] Cloud deployment configuration
+
+---
+
+## 🔗 How It All Connects
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                    SWAPNA ARCHITECTURE                   │
-│                                                         │
-│   ┌──────────┐    ┌──────────┐    ┌──────────────────┐  │
-│   │ Frontend │◄──►│ Backend  │◄──►│  Database (DBMS) │  │
-│   │ (Member 1)│   │(Member 2)│    │   (Member 3)     │  │
-│   └──────────┘    └────┬─────┘    └──────────────────┘  │
-│                        │                                 │
-│                   ┌────▼─────┐                           │
-│                   │ ML Models│                           │
-│                   │(Member 4)│                           │
-│                   └──────────┘                           │
-│                                                         │
-│         🐳 Docker & DevOps — shared across team         │
-└─────────────────────────────────────────────────────────┘
+                    ┌─────────────┐
+                    │   Frontend  │
+                    │  (Member 1) │
+                    └──────┬──────┘
+                           │ API Calls
+                           ▼
+                    ┌─────────────┐        ┌──────────────┐
+                    │   Backend   │◄──────►│   Database   │
+                    │  (Member 2) │        │  (Member 3)  │
+                    └──────┬──────┘        └──────────────┘
+                           │ HTTP
+                           ▼
+                    ┌─────────────┐
+                    │  ML Service │
+                    │  (Member 4) │
+                    └─────────────┘
+
+            🐳 All services containerized by Member 4
 ```
 
----
-
-### 👤 Member 1 — Frontend & UI/UX
-
-**Domain:** User Interface, Client-Side Logic, Design System
-
-| Area                   | Details                                                         |
-| ---------------------- | --------------------------------------------------------------- |
-| **Core**               | Build all pages — landing, dashboard, appointments, profile     |
-| **Components**         | Reusable UI components, forms, modals, navigation               |
-| **State Management**   | Global state for auth, user data, notifications                 |
-| **API Integration**    | Connect frontend to backend REST / GraphQL APIs                 |
-| **Real-time Features** | Chat UI, video call interface, live notifications               |
-| **Responsiveness**     | Mobile-first, cross-browser compatible layouts                  |
-| **Charts & Visuals**   | Health dashboards with interactive charts and graphs             |
-
-**Key Deliverables:**
-- Patient portal, Doctor portal, Admin panel
-- Appointment booking flow
-- Health dashboard with charts
-- Video call UI (WebRTC integration)
+| Connection | Flow |
+|------------|------|
+| **Frontend → Backend** | REST API calls for all data operations |
+| **Backend → Database** | ORM queries, migrations, transactions |
+| **Backend → ML Service** | HTTP requests for disease predictions |
+| **Docker → All** | Every service runs in its own container |
+| **CI/CD → GitHub** | Auto-deploy on push to `main` |
 
 ---
 
-### 👤 Member 2 — Backend & API Development
-
-**Domain:** Server-Side Logic, REST APIs, Authentication, Business Logic
-
-| Area                | Details                                                            |
-| ------------------- | ------------------------------------------------------------------ |
-| **API Design**      | RESTful endpoints for all features (CRUD for users, appointments)  |
-| **Authentication**  | JWT-based auth, role-based access control (patient/doctor/admin)   |
-| **Business Logic**  | Appointment scheduling, prescription management, notifications     |
-| **File Handling**    | Upload/download lab reports, profile images, prescriptions         |
-| **Real-time**       | Socket.io for chat, notifications, live status updates             |
-| **ML Integration**  | Serve ML model predictions via API routes                          |
-| **Security**        | Input validation, rate limiting, CORS, HTTPS                      |
-
-**Key Deliverables:**
-- Complete REST API with Swagger/OpenAPI docs
-- Auth system with role-based middleware
-- Integration layer for ML model serving
-- Real-time notification system
-
----
-
-### 👤 Member 3 — Database & Data Management (DBMS)
-
-**Domain:** Schema Design, Queries, Data Integrity, Migrations
-
-| Area                   | Details                                                        |
-| ---------------------- | -------------------------------------------------------------- |
-| **Schema Design**      | ER diagrams, normalize tables for users, doctors, appointments |
-| **ORM / Queries**      | Sequelize / Prisma / SQLAlchemy models and query optimization  |
-| **Data Relationships** | Foreign keys, joins, cascading deletes for related records     |
-| **Migrations**         | Version-controlled schema migrations                           |
-| **Seeding**            | Sample/test data for development and demos                     |
-| **Caching**            | Redis for session storage, frequent queries, rate limiting     |
-| **Backups & Security** | Data encryption at rest, automated backup strategy             |
-
-**Key Deliverables:**
-- Complete ER diagram and database schema
-- ORM models for all entities
-- Optimized queries and indexes
-- Seed scripts for demo data
-
----
-
-### 👤 Member 4 — ML/AI Models & DevOps
-
-**Domain:** Machine Learning Models, Docker, CI/CD, Deployment
-
-| Area                    | Details                                                         |
-| ----------------------- | --------------------------------------------------------------- |
-| **Disease Prediction**  | Train models on symptom/disease datasets (classification)       |
-| **Image Analysis**      | CNN-based models for X-ray / skin lesion analysis               |
-| **Report Parsing**      | OCR pipeline to extract data from uploaded lab reports           |
-| **Model Serving**       | Flask/FastAPI microservice to expose model predictions           |
-| **Docker**              | Dockerfiles for frontend, backend, DB, ML service               |
-| **Docker Compose**      | Multi-container orchestration for full-stack local dev          |
-| **CI/CD**               | GitHub Actions — lint, test, build, deploy on push              |
-| **Deployment**          | Cloud deployment scripts (AWS/GCP), Nginx reverse proxy        |
-
-**Key Deliverables:**
-- Trained disease prediction model (≥ 85% accuracy)
-- Dockerized full-stack setup (`docker-compose up` one-command run)
-- CI/CD pipeline with automated tests
-- Deployment-ready cloud configuration
-
----
-
-## 🔗 How the Domains Connect
-
-```mermaid
-graph LR
-    A[Frontend<br>Member 1] -->|API Calls| B[Backend<br>Member 2]
-    B -->|Read/Write| C[Database<br>Member 3]
-    B -->|Prediction Requests| D[ML Models<br>Member 4]
-    D -->|Dockerized Service| B
-    A -->|Served via Nginx| D2[Docker<br>Member 4]
-    B -->|Containerized| D2
-    C -->|Containerized| D2
-```
-
-| Interaction               | Description                                                  |
-| ------------------------- | ------------------------------------------------------------ |
-| Frontend ↔ Backend        | REST API calls for all data operations                       |
-| Backend ↔ Database        | ORM queries, migrations, data validation                     |
-| Backend ↔ ML Models       | HTTP calls to ML microservice for predictions                |
-| Docker ↔ All Services     | Every service runs in its own container, orchestrated by Compose |
-| CI/CD ↔ GitHub            | Auto-deploy on push to main branch                           |
-
----
-
-## 📁 Proposed Project Structure
+## 📁 Project Structure
 
 ```
 swapna/
-├── frontend/              # React/Next.js application
+│
+├── frontend/                 # React / Next.js app
 │   ├── src/
-│   │   ├── components/    # Reusable UI components
-│   │   ├── pages/         # Route-based pages
-│   │   ├── hooks/         # Custom React hooks
-│   │   ├── services/      # API service functions
-│   │   └── styles/        # Global styles & design tokens
+│   │   ├── components/       # Reusable UI components
+│   │   ├── pages/            # Route-based pages
+│   │   ├── hooks/            # Custom React hooks
+│   │   ├── services/         # API service layer
+│   │   └── styles/           # Global styles
 │   └── Dockerfile
 │
-├── backend/               # Node.js/Express or FastAPI server
-│   ├── routes/            # API route handlers
-│   ├── controllers/       # Business logic
-│   ├── middleware/         # Auth, validation, error handling
-│   ├── models/            # ORM/DB models
-│   ├── utils/             # Helper functions
+├── backend/                  # Express / FastAPI server
+│   ├── routes/               # API route definitions
+│   ├── controllers/          # Business logic
+│   ├── middleware/            # Auth, validation, errors
+│   ├── models/               # ORM models
 │   └── Dockerfile
 │
-├── database/              # Database configs & scripts
-│   ├── migrations/        # Schema migration files
-│   ├── seeds/             # Seed/demo data
-│   └── schema.sql         # Raw schema (reference)
+├── database/                 # DB configs & scripts
+│   ├── migrations/           # Schema migrations
+│   ├── seeds/                # Demo data
+│   └── schema.sql            # Reference schema
 │
-├── ml-service/            # ML model training & serving
-│   ├── models/            # Trained model files (.pkl, .h5)
-│   ├── notebooks/         # Jupyter notebooks for experiments
-│   ├── api/               # Flask/FastAPI prediction endpoints
-│   ├── data/              # Training datasets
+├── ml-service/               # ML model training & serving
+│   ├── models/               # Saved models (.pkl, .h5)
+│   ├── notebooks/            # Jupyter experiments
+│   ├── api/                  # Prediction endpoints
 │   └── Dockerfile
 │
-├── docker-compose.yml     # Multi-container orchestration
-├── .github/workflows/     # CI/CD pipeline configs
-├── docs/                  # ER diagrams, API docs, architecture
+├── docs/                     # ER diagrams, API docs
+├── docker-compose.yml        # Multi-container orchestration
+├── .github/workflows/        # CI/CD pipelines
 └── README.md
 ```
 
 ---
 
-## 🛠️ Getting Started
+## � Getting Started
 
 ```bash
-# Clone the repository
+# Clone the repo
 git clone https://github.com/<your-org>/swapna.git
 cd swapna
 
-# Run the full stack with Docker
+# Run everything with Docker
 docker-compose up --build
 
-# Or run individual services
-cd frontend && npm install && npm run dev
-cd backend && npm install && npm run dev
+# Or run services individually
+cd frontend  && npm install && npm run dev
+cd backend   && npm install && npm run dev
 cd ml-service && pip install -r requirements.txt && python app.py
 ```
 
 ---
 
-## 📝 Contributing
+## 🤝 Contributing
 
-1. Create a feature branch from `main`: `git checkout -b feature/<your-feature>`
-2. Commit with clear messages: `git commit -m "feat: add appointment booking API"`
-3. Push and open a Pull Request for review
-4. At least one other team member must approve before merging
+1. Create a branch: `git checkout -b feature/your-feature`
+2. Commit changes: `git commit -m "feat: add appointment API"`
+3. Push: `git push origin feature/your-feature`
+4. Open a **Pull Request** — at least 1 team member must review before merge
 
 ---
 
 ## 📄 License
 
-This project is for educational and hackathon purposes.
+This project is for **educational and hackathon purposes**.
 
 ---
 
-<p align="center">
-  Built with ❤️ by <strong>Team Swapna</strong>
-</p>
+<div align="center">
+
+**Built with ❤️ by Team Swapna**
+
+</div>
 ]]>
