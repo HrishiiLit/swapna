@@ -1,38 +1,1138 @@
-.App {
-  text-align: center;
+.app-shell {
+  color: #0f172a;
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 26%),
+    radial-gradient(circle at 85% 12%, rgba(16, 185, 129, 0.12), transparent 22%),
+    linear-gradient(180deg, #f8fafc 0%, #eef4fb 100%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(18px);
+  background: rgba(248, 250, 252, 0.74);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-inner {
+  min-height: 76px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+}
+
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
   color: white;
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.18);
 }
 
-.App-link {
-  color: #61dafb;
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 26px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.desktop-nav a,
+.social-links a,
+.footer-grid a {
+  color: #334155;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.desktop-nav a:hover,
+.social-links a:hover,
+.footer-grid a:hover {
+  color: #2563eb;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-secondary,
+.ghost-button,
+.mobile-toggle,
+.secondary-button {
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  background: rgba(255, 255, 255, 0.76);
+  color: #0f172a;
+}
+
+.nav-secondary,
+.ghost-button,
+.mobile-toggle {
+  border-radius: 999px;
+  padding: 12px 16px;
+}
+
+.nav-primary,
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-primary,
+.primary-button {
+  color: white;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  box-shadow: 0 18px 34px rgba(37, 99, 235, 0.2);
+}
+
+.secondary-button {
+  border: 1px solid rgba(37, 99, 235, 0.16);
+  background: rgba(255, 255, 255, 0.88);
+  color: #1d4ed8;
+}
+
+.primary-button:hover,
+.secondary-button:hover,
+.nav-primary:hover,
+.nav-secondary:hover,
+.ghost-button:hover,
+.mobile-toggle:hover {
+  transform: translateY(-1px);
+}
+
+.primary-button:active,
+.secondary-button:active,
+.nav-primary:active,
+.nav-secondary:active,
+.ghost-button:active,
+.mobile-toggle:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.mobile-toggle {
+  display: none;
+}
+
+.mobile-drawer {
+  display: none;
+}
+
+.hero-section {
+  padding: 76px 0 34px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: #2563eb;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.hero-copy h1,
+.section-heading h2,
+.cta-card h2 {
+  margin: 0;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+}
+
+.hero-copy h1 {
+  max-width: 12ch;
+  font-size: clamp(3rem, 7vw, 5.8rem);
+}
+
+.hero-text,
+.section-copy,
+.cta-card p,
+.footer-brand p,
+.benefit-card p,
+.feature-card p,
+.testimonial-card p,
+.pricing-copy,
+.toast-list span,
+.form-note,
+.dashboard-kicker,
+.dashboard-status,
+.mini-note,
+.trusted-logos span,
+.trust-stat span,
+.timeline span,
+.spending-row span,
+.spending-row em,
+.transaction-row span,
+.faq-answer p,
+.newsletter p {
+  color: #475569;
+  line-height: 1.7;
+}
+
+.hero-text,
+.section-copy,
+.cta-card p,
+.footer-brand p {
+  max-width: 62ch;
+  font-size: 1.04rem;
+}
+
+.hero-actions,
+.hero-points,
+.hero-stats,
+.newsletter-form {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hero-actions {
+  margin: 28px 0 22px;
+}
+
+.hero-points {
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.hero-points div {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #1e293b;
+}
+
+.hero-points svg,
+.feature-icon svg,
+.benefit-card svg,
+.panel-chip svg,
+.mini-note svg,
+.toast-card svg,
+.pricing-card li svg {
+  color: #10b981;
+}
+
+.hero-stats {
+  gap: 12px;
+}
+
+.hero-stat,
+.trust-stat,
+.floating-metric,
+.feature-card,
+.benefit-card,
+.testimonial-card,
+.pricing-card,
+.panel,
+.product-panel,
+.table-card,
+.cta-card,
+.dashboard-shell,
+.faq-item,
+.newsletter,
+.footer-grid > div {
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 22px 45px rgba(15, 23, 42, 0.06);
+}
+
+.hero-stat {
+  min-width: 160px;
+  padding: 16px 18px;
+  border-radius: 18px;
+}
+
+.hero-stat strong,
+.trust-stat strong,
+.feature-card h3,
+.benefit-card h3,
+.testimonial-card strong,
+.pricing-name,
+.pricing-price,
+.table-card strong,
+.panel-header strong,
+.transaction-row strong,
+.spending-row strong,
+.dashboard-header h3,
+.section-heading h2,
+.cta-card h2 {
+  color: #0f172a;
+}
+
+.hero-stat strong,
+.trust-stat strong {
+  display: block;
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+}
+
+.hero-stat span,
+.trust-stat span {
+  font-size: 0.94rem;
+}
+
+.hero-visual {
+  position: relative;
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(10px);
+  opacity: 0.7;
+}
+
+.hero-orb-blue {
+  inset: -24px auto auto 8%;
+  width: 150px;
+  height: 150px;
+  background: rgba(37, 99, 235, 0.22);
+}
+
+.hero-orb-emerald {
+  right: 0;
+  bottom: 12%;
+  width: 180px;
+  height: 180px;
+  background: rgba(16, 185, 129, 0.18);
+}
+
+.dashboard-shell {
+  position: relative;
+  padding: 22px;
+  border-radius: 30px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.92)),
+    rgba(255, 255, 255, 0.76);
+}
+
+.dashboard-shell::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+.dashboard-header,
+.panel-header,
+.table-header,
+.product-panel-header,
+.testimonial-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.dashboard-kicker,
+.panel-header p,
+.table-header p,
+.product-panel-header span {
+  margin: 0 0 4px;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.dashboard-header h3,
+.panel-header strong,
+.table-header strong,
+.product-panel-header strong {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.dashboard-status,
+.panel-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  background: rgba(37, 99, 235, 0.08);
+  color: #1d4ed8;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 6px rgba(16, 185, 129, 0.12);
+}
+
+.dashboard-grid-top,
+.dashboard-grid-bottom,
+.product-grid,
+.trust-grid,
+.feature-grid,
+.benefit-grid,
+.testimonial-grid,
+.pricing-grid,
+.footer-grid,
+.faq-grid {
+  display: grid;
+  gap: 22px;
+}
+
+.dashboard-grid-top {
+  grid-template-columns: 1.7fr 1fr;
+  margin-top: 18px;
+}
+
+.chart-panel,
+.card-stack,
+.transactions-panel,
+.spending-panel {
+  padding: 18px;
+  border-radius: 24px;
+}
+
+.chart-panel {
+  min-height: 280px;
+}
+
+.sparkline {
+  width: 100%;
+  height: 160px;
+  margin-top: 16px;
+}
+
+.sparkline-caption,
+.spending-table,
+.transaction-list,
+.toast-list,
+.timeline,
+.hero-points,
+.faq-list,
+.newsletter-form {
+  display: grid;
+  gap: 14px;
+}
+
+.sparkline-caption {
+  grid-template-columns: repeat(4, 1fr);
+  color: #64748b;
+  font-size: 0.88rem;
+}
+
+.card-stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+}
+
+.liquidity-ring {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: conic-gradient(#2563eb 0 72%, rgba(148, 163, 184, 0.18) 72% 100%);
+}
+
+.liquidity-ring::after {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  border-radius: 50%;
+  background: #f8fafc;
+}
+
+.liquidity-ring-fill,
+.liquidity-ring-center {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+}
+
+.liquidity-ring-center span {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+.liquidity-ring-center small {
+  color: #64748b;
+}
+
+.floating-metrics {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.floating-metric {
+  padding: 14px;
+  border-radius: 18px;
+  animation: float 5.5s ease-in-out infinite;
+}
+
+.floating-metric span,
+.floating-metric em {
+  display: block;
+  color: #475569;
+}
+
+.floating-metric strong {
+  display: block;
+  margin: 6px 0;
+  font-size: 1.2rem;
+}
+
+.tone-blue {
+  background: rgba(37, 99, 235, 0.08);
+}
+
+.tone-emerald {
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.dashboard-grid-bottom {
+  grid-template-columns: 1.2fr 0.8fr;
+  margin-top: 12px;
+}
+
+.transaction-row,
+.spending-row,
+.faq-trigger,
+.footer-grid > div,
+.trusted-logos,
+.trust-stat,
+.hero-stat,
+.testimonial-card,
+.pricing-card,
+.benefit-card,
+.feature-card,
+.table-card,
+.cta-card,
+.product-panel {
+  border-radius: 24px;
+}
+
+.transaction-row,
+.spending-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+}
+
+.transaction-row:last-child,
+.spending-row:last-child {
+  border-bottom: 0;
+}
+
+.transaction-row div,
+.spending-row div {
+  display: grid;
+  gap: 4px;
+}
+
+.mini-note,
+.toast-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.toast-card {
+  position: absolute;
+  right: 18px;
+  bottom: -16px;
+  max-width: 280px;
+  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.1);
+}
+
+.toast-card strong,
+.toast-list strong,
+.transaction-row strong,
+.spending-row strong,
+.testimonial-card strong {
+  display: block;
+}
+
+.toast-card span,
+.toast-list span,
+.testimonial-card span,
+.transaction-row span,
+.spending-row em {
+  font-size: 0.93rem;
+}
+
+.content-section {
+  padding: 92px 0 0;
+}
+
+.section-heading {
+  max-width: 720px;
+  margin-bottom: 26px;
+}
+
+.section-heading-center {
+  text-align: center;
+  margin-inline: auto;
+}
+
+.section-heading h2,
+.cta-card h2 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+}
+
+.feature-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.feature-card,
+.benefit-card,
+.testimonial-card,
+.pricing-card {
+  padding: 24px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.feature-card:hover,
+.benefit-card:hover,
+.testimonial-card:hover,
+.pricing-card:hover,
+.panel:hover,
+.product-panel:hover,
+.table-card:hover,
+.cta-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.08);
+}
+
+.feature-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: rgba(37, 99, 235, 0.08);
+  margin-bottom: 18px;
+}
+
+.product-grid {
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: start;
+}
+
+.product-panel,
+.table-card {
+  padding: 24px;
+}
+
+.product-panel-header {
+  margin-bottom: 16px;
+}
+
+.report-chart {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 10px;
+  align-items: end;
+  min-height: 260px;
+  padding: 18px 0 12px;
+}
+
+.report-column {
+  display: flex;
+  align-items: end;
+  min-height: 100%;
+}
+
+.report-column span {
+  width: 100%;
+  border-radius: 16px 16px 8px 8px;
+  background: linear-gradient(180deg, rgba(37, 99, 235, 0.95), rgba(16, 185, 129, 0.8));
+  box-shadow: 0 16px 34px rgba(37, 99, 235, 0.16);
+}
+
+.timeline {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 18px;
+}
+
+.timeline div,
+.toast-list div {
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(248, 250, 252, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.table-card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 14px;
+}
+
+.table-card th,
+.table-card td {
+  padding: 14px 0;
+  text-align: left;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+  color: #334155;
+}
+
+.table-card th {
+  color: #0f172a;
+  font-size: 0.84rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.toast-list {
+  margin-top: 16px;
+}
+
+.benefit-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.benefit-card svg {
+  margin-bottom: 14px;
+}
+
+.testimonial-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.16), rgba(16, 185, 129, 0.16));
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+.rating {
+  margin: 18px 0 12px;
+  color: #f59e0b;
+  letter-spacing: 0.12em;
+}
+
+.pricing-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pricing-card-featured {
+  position: relative;
+  transform: translateY(-10px);
+  border-color: rgba(37, 99, 235, 0.24);
+  box-shadow: 0 24px 50px rgba(37, 99, 235, 0.12);
+}
+
+.recommended-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.12);
+  color: #047857;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.pricing-price {
+  margin: 10px 0 10px;
+  font-size: 3rem;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.pricing-card ul {
+  display: grid;
+  gap: 12px;
+  padding: 18px 0;
+  margin: 0;
+  list-style: none;
+}
+
+.pricing-card li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #334155;
+}
+
+.faq-grid {
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: start;
+}
+
+.faq-item {
+  overflow: hidden;
+}
+
+.faq-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 22px;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 22px;
+  opacity: 0;
+  transition: max-height 0.24s ease, opacity 0.24s ease, padding 0.24s ease;
+}
+
+.faq-answer.is-open {
+  max-height: 160px;
+  opacity: 1;
+  padding: 0 22px 20px;
+}
+
+.chevron {
+  transition: transform 0.22s ease;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+}
+
+.cta-section {
+  padding: 92px 0;
+}
+
+.cta-card {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+  padding: 34px;
+}
+
+.signup-form {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.signup-form label,
+.newsletter-form {
+  display: grid;
+  gap: 8px;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.signup-form input,
+.newsletter-form input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #0f172a;
+}
+
+.footer {
+  padding: 20px 0 44px;
+}
+
+.footer-grid {
+  grid-template-columns: 1.5fr repeat(3, minmax(0, 0.7fr)) 1fr;
+  align-items: start;
+}
+
+.footer-grid > div {
+  padding: 24px;
+}
+
+.footer-grid h3 {
+  margin: 0 0 14px;
+}
+
+.footer-grid a {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.newsletter-form {
+  grid-template-columns: 1fr auto;
+}
+
+.dashboard-loading {
+  position: absolute;
+  inset: 18px;
+  display: grid;
+  align-content: center;
+  gap: 14px;
+  border-radius: 24px;
+  background: rgba(248, 250, 252, 0.88);
+}
+
+.loading-line,
+.loading-card {
+  border-radius: 14px;
+  background: linear-gradient(90deg, rgba(226, 232, 240, 0.96), rgba(255, 255, 255, 1), rgba(226, 232, 240, 0.96));
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite linear;
+}
+
+.loading-line-lg {
+  width: 62%;
+  height: 18px;
+}
+
+.loading-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.loading-card {
+  height: 90px;
+}
+
+.panel-wide {
+  min-height: 280px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
   }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-copy,
+.hero-visual,
+.section-heading,
+.feature-card,
+.benefit-card,
+.testimonial-card,
+.pricing-card,
+.product-panel,
+.table-card,
+.cta-card,
+.trust-grid > * {
+  animation: fadeUp 0.7s ease both;
+}
+
+.feature-card:nth-child(2),
+.benefit-card:nth-child(2),
+.testimonial-card:nth-child(2),
+.pricing-card:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.feature-card:nth-child(3),
+.benefit-card:nth-child(3),
+.testimonial-card:nth-child(3),
+.pricing-card:nth-child(3) {
+  animation-delay: 0.14s;
+}
+
+@media (max-width: 1120px) {
+  .hero-grid,
+  .product-grid,
+  .cta-card,
+  .faq-grid,
+  .footer-grid,
+  .dashboard-grid-top,
+  .dashboard-grid-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .floating-metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .feature-grid,
+  .benefit-grid,
+  .testimonial-grid,
+  .pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: min(100% - 24px, 1180px);
+  }
+
+  .desktop-nav,
+  .nav-secondary,
+  .nav-primary {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: inline-flex;
+  }
+
+  .mobile-drawer {
+    display: grid;
+    gap: 8px;
+    padding: 16px 12px 18px;
+    margin: 0 12px 12px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+  }
+
+  .mobile-drawer a {
+    padding: 12px 10px;
+    border-radius: 12px;
+    color: #0f172a;
+  }
+
+  .mobile-drawer a:last-child {
+    color: #1d4ed8;
+  }
+
+  .hero-section {
+    padding-top: 34px;
+  }
+
+  .hero-copy h1 {
+    max-width: 100%;
+    font-size: clamp(2.6rem, 12vw, 4.2rem);
+  }
+
+  .feature-grid,
+  .benefit-grid,
+  .testimonial-grid,
+  .pricing-grid,
+  .footer-grid,
+  .floating-metrics,
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .floating-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-actions,
+  .hero-stats,
+  .newsletter-form {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-stats,
+  .hero-actions,
+  .newsletter-form {
+    display: grid;
+  }
+
+  .dashboard-shell {
+    padding: 16px;
+  }
+
+  .report-chart {
+    min-height: 200px;
+  }
+
+  .toast-card {
+    position: static;
+    margin-top: 14px;
+    max-width: none;
+  }
+
+  .cta-card {
+    padding: 24px;
   }
 }
